@@ -38,7 +38,6 @@ class UserList extends Component {
     //     event.target.value.toLowerCase()) !== -1;
     // });
     // this.setState({users: updatedList});
-    debugger
     this.setState({users: users})
   }
 

@@ -7,7 +7,6 @@ import Welcome from './Welcome'
 import { connect } from 'react-redux'
 
 export const App = (props) =>{
-  debugger
   return (
   <div className="App">
     <TopNavbar

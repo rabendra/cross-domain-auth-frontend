@@ -19,7 +19,6 @@ function setAuthToken(response) {
 }
 
 function redirect_after_login(){
-  debugger
   window.location.href = "/"
   window.reload();
 }
