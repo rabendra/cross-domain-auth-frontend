@@ -1,7 +1,7 @@
 import runtimeEnv from '@mars/heroku-js-runtime-env'
 
 const env = runtimeEnv()
-
+debugger
 const config = {
   mockApis: env.REACT_APP_MOCK_APIS === 'true',
   apiUrl: env.REACT_APP_API_URL,
