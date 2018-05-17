@@ -12,6 +12,7 @@ export const App = (props) =>{
     <TopNavbar
       isAuthenticated={props.isAuthenticated}
     />
+    {props.isAuthenticated ? <Welcome /> : null}
     <div>{ ((props['location'].pathname === "/") && (props.isAuthenticated === false)) ? <Users /> : ""}</div>,
     <div>{ ((props['location'].pathname === "/signin") || (props['location'].pathname === "/signup")) ? props.children : ""}</div>
     {(localStorage.currentUser !== undefined) ? props.children : ""}

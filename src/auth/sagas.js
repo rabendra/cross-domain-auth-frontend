@@ -20,7 +20,7 @@ function setAuthToken(response) {
 
 function redirect_after_login(){
   window.location.href = "/"
-  window.reload();
+  // window.reload();
 }
 
 
