@@ -14,10 +14,16 @@ import { types as fbAuthTypes } from '../fbAuth/actions'
 import { GOOGLE_LOGIN_SUCCESS, SIGNUP_REQUEST, SIGNIN_REQUEST } from '../actions/actionTypes'
 
 function setAuthToken(response) {
-  debugger
   localStorage.setItem("currentUser",
-response.accessToken)
+  response.accessToken)
 }
+
+function redirect_after_login(){
+  debugger
+  window.location.href = "/"
+  window.reload();
+}
+
 
 // function executeCode() {
 //   let mountNode = React.findDOMNode(this.refs.mount);
@@ -30,11 +36,11 @@ response.accessToken)
 // }
 
 function * _requestAuth (params) {
-  debugger
   try {
     yield put(requestAuth(params))
     const response = yield call(api.requestAuth, params)
     yield put(receiveAuth(response))
+    yield call(redirect_after_login(response)) 
     yield call(setAuthToken(response)) 
   } catch (error) {
     yield put(receiveAuthError(error))
@@ -47,6 +53,8 @@ function * _requestSignup (params) {
     const response = yield call(api.createUser, params)
     yield put(receiveAuth(response))
     yield call(setAuthToken(response))
+    yield call(redirect_after_login(response)) 
+
   } catch (error) {
     yield put(receiveAuthError(error))
   }
@@ -57,7 +65,9 @@ function * _requestSignin (params) {
     // yield put(requestAuth(params))
     const response = yield call(api.loginUser, params)
     yield put(receiveAuth(response))
+    yield call(redirect_after_login(response)) 
     yield call(setAuthToken(response))
+
   } catch (error) {
     yield put(receiveAuthError(error))
   }

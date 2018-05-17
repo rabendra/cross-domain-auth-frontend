@@ -17,12 +17,13 @@ import {
 class Signin extends Component {
   constructor(props) {
     super(props);
-
+    debugger
     this.state = {
       isLoading: false,
       email: "",
       password: "",
-      newUser: null
+      newUser: null,
+      authButtonClick: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -56,6 +57,17 @@ class Signin extends Component {
 
     this.setState({ isLoading: true });
   }
+  clicked(){
+    this.setState({authButtonClick: true})
+  }
+
+  renderOauthButtons(){
+    return(
+      <div className="oauth-button col-md-6 col-md-push-4">
+  
+          </div>
+    )
+  }
 
   renderForm() {
     return (
@@ -84,7 +96,7 @@ class Signin extends Component {
 
     return(
       <div>
-            <FacebookLoginButton />
+           <FacebookLoginButton />
             <GoogleLoginButton />
           </div>
     );
@@ -93,14 +105,10 @@ class Signin extends Component {
   render() {
     return (
       <div className="Signin">
-        {this.state.newUser === null
-          ? this.renderForm()
-          : ""}
-          <div className="clearfix"></div>
-          <div className="oauth-button col-md-6 col-md-push-4">
-            <FacebookLoginButton />
-            <GoogleLoginButton />
-          </div>
+        {
+          this.state.newUser === null? this.renderForm() : this.renderOauthButtons()
+          
+      }
       </div>
     );
   }

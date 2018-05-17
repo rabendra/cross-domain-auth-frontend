@@ -11,5 +11,5 @@ if (config.mockApis) {
 
 export const fetchUsers = () =>
   axios
-    .get(`http://localhost:3001/users`)
+    .get(`${apiUrl}/users`)
     .then(({ data }) => data)
