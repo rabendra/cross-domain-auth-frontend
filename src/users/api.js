@@ -8,7 +8,6 @@ if (config.mockApis) {
   console.log('Api mock enabled for TodoList')
   apiMock()
 }
-
 export const fetchUsers = () =>
   axios
     .get(`${apiUrl}/users`)
