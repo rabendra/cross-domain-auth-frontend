@@ -2,7 +2,7 @@ import axios from 'axios'
 import config from '../config.js'
 import apiMock from './api.mock'
 
-const { apiUrl } = config
+const { apiUrl, authApiUrl } = config
 
 if (config.mockApis) {
   console.log('Api mock enabled for TodoList')
@@ -10,5 +10,5 @@ if (config.mockApis) {
 }
 export const fetchUsers = () =>
   axios
-    .get(`${apiUrl}/users`)
+    .get(`${authApiUrl}/users`)
     .then(({ data }) => data)
