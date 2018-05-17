@@ -11,7 +11,7 @@ if (config.mockApis) {
 
 export const createUser = ({user }) =>
   axios
-    .post(`http://localhost:3001/registrations`, { user })
+    .post(`${authApiUrl}/registrations`, { user })
     .then(({ data }) => data)
 
 export const requestAuth = ({ provider, oauthAccessToken, user }) =>
@@ -21,7 +21,7 @@ export const requestAuth = ({ provider, oauthAccessToken, user }) =>
 
 export const loginUser = ({user }) =>
   axios
-    .post(`http://localhost:3001/sessions`, { user })
+    .post(`${authApiUrl}/sessions`, { user })
     .then(({ data }) => data)
 
 
