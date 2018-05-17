@@ -1,0 +1,29 @@
+@media all and (min-width: 480px) {
+  .Signup ,.Signin {
+    padding: 60px 0;
+  }
+
+  .Signup ,.Signin form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.Signup, .Signin form span.help-block {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color: #999;
+}
+
+.kep-login-facebook {
+    height: 46px !important;
+    vertical-align: middle !important;
+    padding: 5px !important;
+    margin-right: 50px;
+    text-transform: capitalize !important;
+    display: inline-block; background: rgb(209, 72, 54); color: rgb(255, 255, 255); width: 262px; padding-top: 10px; padding-bottom: 10px; border-radius: 2px; border: 1px solid transparent; font-size: 16px; font-weight: bold; font-family: Roboto;
+}
+
+.oauth-button {
+  margin-top: 10px;
+}

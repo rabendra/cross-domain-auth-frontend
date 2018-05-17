@@ -1,0 +1,8 @@
+export const GOOGLE_LOGIN_REQUEST = 'googleAuth/login/request'
+export const GOOGLE_LOGIN_SUCCESS = 'googleAuth/login/success'
+export const FB_LOGIN_REQUEST = 'fbAuth/login/request'
+export const FB_LOGIN_SUCCESS = 'fbAuth/login/success'
+export const SIGNUP_REQUEST = 'signup/request'
+export const SIGNUP_SUCCESS = 'auth/create'
+export const SIGNIN_REQUEST = 'signup/request'
+export const LIST_REQUEST = 'TodoList/list/request'
